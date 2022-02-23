@@ -1,6 +1,5 @@
 export class Solver { // eslint-disable-line
-    
-    
+
     checkSequence = (array) => {
       let rep = false;
       for (let i = 0; i < array.length; i += 1) {
@@ -12,15 +11,14 @@ export class Solver { // eslint-disable-line
             if (count === 5) {
               rep = true;
             }
-            
           }
         }
       }
       return rep;
     }
 
-    rankHand = (straight,flush,duplicates) => {
-        this.rank = (flush && straight && 1)
+    rankHand = (straight, flush, duplicates) => {
+      this.rank = (flush && straight && 1)
                     || (duplicates[4] && 2)
                     || (duplicates[3] && duplicates[2] && 3)
                     || (flush && 4)
@@ -29,15 +27,15 @@ export class Solver { // eslint-disable-line
                     || (duplicates[2] > 1 && 7)
                     || (duplicates[2] && 8)
                     || 9;
-        return this.rank;
-    } 
+      return this.rank;
+    }
 
-    checkFlush(suits){
-        this.flush = suits[0] === suits[4]
+    checkFlush(suits) {
+      this.flush = suits[0] === suits[4]
                 || suits[1] === suits[5]
                 || suits[2] === suits[6]
                 || suits[3] === suits[7];
-        return this.flush
+      return this.flush;
     }
 
     switchRank(rank, value) {
@@ -75,21 +73,21 @@ export class Solver { // eslint-disable-line
       return c;
     };
 
-    getSuits=(b)=> b.filter((e) => e.charCodeAt() >= 97).sort()
-    
+    getSuits=(b) => b.filter((e) => e.charCodeAt() >= 97).sort()
+
     getFaces = (b) => b.map((x) => x.replace('T', '10').replace('J', '11').replace('Q', '12').replace('K', '13')
-    .replace('A', '14')).sort((a, b) => a - b).filter((e) => e > 0);
+      .replace('A', '14')).sort((a, b) => a - b).filter((e) => e > 0);
 
     cardDealFive(a, index) {
       const b = a.split('');
-      const face = this.getFaces(b)
-      const suits = this.getSuits(b)
+      const face = this.getFaces(b);
+      const suits = this.getSuits(b);
       const flush = this.checkFlush(suits);
       const first = face[0];
       const straight = face.every((f, index) => f - first === index);
       const counts = face.reduce(this.count, {});
       const duplicates = Object.values(counts).reduce(this.count, {});
-      const rank = this.rankHand(straight,flush,duplicates)
+      const rank = this.rankHand(straight, flush, duplicates);
 
       const byCountFirst = (a, b) => {
         let result;
@@ -115,12 +113,12 @@ export class Solver { // eslint-disable-line
 
       a += board[0];
       const b = a.split('');
-      let face = this.getFaces(b)
-      console.log(face)
+      let face = this.getFaces(b);
+
       score = face.slice(0, 2).sort((a, b) => b - a).join('');
       face = face.sort((a, b) => a - b);
-      const suits = this.getSuits(b)
-      const flush = this.checkFlush(suits)
+      const suits = this.getSuits(b);
+      const flush = this.checkFlush(suits);
       const first = face[0];
       const straight = face.every((f, index) => f - first === index);
       const counts = face.reduce(this.count, {});
@@ -138,7 +136,7 @@ export class Solver { // eslint-disable-line
       };
 
       const value = face.sort(byCountFirst);
-      const rank = this.rankHand(straight,flush,duplicates)
+      const rank = this.rankHand(straight, flush, duplicates);
       this.valueReduced = this.switchRank(rank, value);
 
       const objectCard = {
@@ -156,15 +154,15 @@ export class Solver { // eslint-disable-line
 
       const b = a.split('');
 
-      let face = this.getFaces(b)
+      let face = this.getFaces(b);
       score = face.slice(0, 2).sort((a, b) => b - a).join('');
 
       face = face.sort((a, b) => a - b);
-      const suits = this.getSuits(b)
+      const suits = this.getSuits(b);
 
       const faceUnique = [...new Set(face)];
-      const flush = this.checkFlush(suits)
-      let straight = this.checkSequence(faceUnique);
+      const flush = this.checkFlush(suits);
+      const straight = this.checkSequence(faceUnique);
 
       const counts = face.reduce(this.count, {});
       const duplicates = Object.values(counts).reduce(this.count, {});
@@ -181,7 +179,7 @@ export class Solver { // eslint-disable-line
       };
 
       const value = face.sort(byCountFirst);
-      const rank = this.rankHand(straight,flush,duplicates)
+      const rank = this.rankHand(straight, flush, duplicates);
       this.valueReduced = this.switchRank(rank, value);
 
       const objectCard = {
