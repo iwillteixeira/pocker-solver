@@ -249,4 +249,4 @@ export class Solver { // eslint-disable-line
 }
 
 const solver = new Solver();
-solver.process('texas-holdem 3d4s5dJsQd 5c4h 7sJd KcAs 9h7h 2dTc Qh8c TsJc');
+solver.process('five-card-draw 5s3s4c2h9d 8dKsTc6c2c 4h6s8hJd5d 5c3cQdTd9s AhQhKcQc2d KhJs9c5h9h 8c3d7h7dTs');
