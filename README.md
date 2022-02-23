@@ -48,13 +48,6 @@ The hand values for 5 cards are as follows (in descending order - from strongest
 * `Pair` - two cards of the same rank
 * `High card` - the "fallback" in case no other hand value rule applies
 
-## Testing
-
-
-All the unit tests in [texas.holdem.solver.spec.js](tests/texas.holdem.solver.spec.js), [omaha.holdem.solver.spec.js](tests/omaha.holdem.solver.spec.js), and
- [five.card.draw.solver.spec.js](tests/five.card.draw.solver.spec.js)
-
-
 
 ### Requirements for Implementation
 
