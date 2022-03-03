@@ -5,7 +5,7 @@ const solver = new Solver();
 describe("Texas Holdem Tests", () => {
 
     it("Test Th 5c6dAcAsQs", () => {
-        expect(solver.process('texas-holdem 5c6dAcAsQs Ks4c KdJs 2hAh Kh4h Kc7h 6h7d 2cJc')).toEqual('2cJc Kh4h=Ks4c Kc7h KdJs 6h7d 2hAh');
+        expect(solver.process('texas-holdem 5c6dAcAsQs Ks4c KdJs 2hAh Kh4h Kc7h 6h7d 2cJc')).toEqual('2cJc Ks4c=Kh4h Kc7h KdJs 6h7d 2hAh');
     });
 
     it("Test Th 2h5c8sAsKc", () => {

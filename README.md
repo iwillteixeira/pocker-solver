@@ -9,10 +9,17 @@ I Developed this algorithm using vanilla js and testing with Jest.
 
 ### Setup
 
-1. Open a command line
-2. Clone the project to your computer with `git clone git@github.com:codescreen/CodeScreen_rhekjzg1`
-3. Go into the folder to the project with `cd React-covid`
+
+3. Go into the folder to the project with `cd CodeScreen_rhekjzg1`.
 4. Build the node modules with `npm install`. 
+5. For testing type `npm run test`.
+
+### Tools
+
+- Vs Studio Code
+- JavaScript
+- npm
+- Jest
 
 ### Poker Games
 
@@ -48,15 +55,11 @@ The hand values for 5 cards are as follows (in descending order - from strongest
 * `Pair` - two cards of the same rank
 * `High card` - the "fallback" in case no other hand value rule applies
 
+## Testing
 
-### Requirements for Implementation
 
-Include a `ReadMe.md` file which documents all known limitations of your solution, in terms of functionality
-implemented, known defects, or considerations how to build and run it.
-
-The code, comments and documentation should be in English.
-
-Your solution must use/be compatible with `Node.js` version `15.5.1`.
+All the unit tests in [texas.holdem.solver.spec.js](tests/texas.holdem.solver.spec.js), [omaha.holdem.solver.spec.js](tests/omaha.holdem.solver.spec.js), and
+ [five.card.draw.solver.spec.js](tests/five.card.draw.solver.spec.js)
 
 ## Author
 
